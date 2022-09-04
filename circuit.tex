@@ -25,7 +25,7 @@
             node[anchor=east](BT){$\mathrm{CaCO_3}$ T}
             % gateBlocal
             (BTUnotD.out) to[short] ++(0.5,0)
-            node[anchor=west] (gateBlocal){GG} ++(0.8,0)
+            node[twoportshape, anchor=west, t=GG] (gateBlocal){} ++(1,0)
             % gate delay
             to [short] ++(0.5,0)
             node[align=left, anchor=west](gateBdelay){\small delay\\ 31 ns} ++(1,0)
@@ -157,9 +157,9 @@
             % ATUnotD to 9
             (ATUnotD.out) |- (and9.in 1)
             % gateA
-            (8.2,6.5) node[anchor=center](gateA){GG}
+            (8.2,6.5) node[twoportshape, anchor=center, t=GG](gateA){}
             % gateB
-            (8.2,1) node[anchor=center](gateB){GG}
+            (8.2,1) node[twoportshape, anchor=center, t=GG](gateB){}
             (Bstart.west) |- (and10.in 2)
             % start trigger
             (15,4)
@@ -170,11 +170,11 @@
             (and10.out) |- (STARTor.in 1)
             % 9 to gate A
             (and9.out) to [short, *-] ++(0,-1)
-            to [short] ++(-3.7,0)
+            to [short] ++(-4,0)
             |- (gateA.west)
             % 10 to gate B
-            (and10.out) to [short, *-] ++(0,1)
-            to [short] ++(-3.5,0)
+            (and10.out) to [short, *-] ++(0,0.9)
+            to [short] ++(-3.7,0)
             |- (gateB.west)
             ;
             \draw
